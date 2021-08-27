@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Users</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row d-flex justify-content-center mt-5"><h2>Hello Gen z</h2></div>
+        <div class="row">
+            <div class="col-4 offset-4">
+                <input id="username" class="form-control" placeholder="User name">
+                <br>
+                <input id="invite" type="text" class="form-control" placeholder="Invite user">
+                <br>
+                <button id="submit" type="submit" class="btn btn-primary form-control">Join Now</button>
+            </div>
+        </div>
+        <div class="listUser col-4 offset-4">
+            <div class="row justify-content-center mt-5"><h3>List User</h3></div>
+            <table class="table text-center" id="table">
+                <tr>
+                    <td>User Name</td>
+                    <td>Score</td>
+                </tr>
+                <% data.forEach(function(item) { %>
+                    <tr>
+                        <td><%= item.user %></td>
+                        <td><%= item.score %></td>
+                    </tr>
+                  <% }); 
+                %>
+            </table>
+        </div>
+        
+    </div>
+</body>
+</html>
