@@ -29,12 +29,11 @@ var users = mongoose.model('users', schema);
 
 app.get('/',(req,res)=>{
     users.find((err,data)=>res.render('index.ejs',{data:data}));
-    // res.render('index.ejs')
 });
 
 app.post('/',(req,res)=>{
     create(req);
-    process(req.body.invited,res);
+    processing(req.body.invited,res);
 })
 
 
@@ -46,7 +45,7 @@ var create = (req)=>{
     });
 }
 
-var process = async (invited,res) =>{
+var processing = async (invited,res) =>{
     var user = await users.findOne({user:invited});
     var i=30;
     while (i>0 && user!=null){
