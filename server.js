@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const port = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -57,6 +58,6 @@ var process = async (invited,res) =>{
     users.find((err,data)=>res.json(data));
 
 }
-app.listen(3000,()=>{
-    console.log('listening on port 3000');
+app.listen(port,()=>{
+    console.log('listening on port ' + port);
 })
